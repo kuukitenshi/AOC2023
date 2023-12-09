@@ -1,16 +1,14 @@
-with open('test.txt') as f:
+with open('input.txt') as f:
     lines = f.readlines()
     
+    
+words = {'one': 'o1ne', 'two': 't2wo', 'three': 'th3ree', 'four': 'fo4ur', 'five': 'fi5ve', 'six': 'si6x', 'seven': 'sev7en', 'eight': 'eig8ht', 'nine':'ni9ne'} 
  
-words = ['on', 'w', 'hre', 'ou', 'iv', 'ix', 'eve', 'igh', 'in']
-# one two three four five six seven eight nine  
  
 def word_to_num(line):
     # print(line)
-    for w in words:
-        line = line.replace(w, str(words.index(w)+1))
-    # print(line)
-    # print('-'*40)
+    for k, v in words.items():
+        line = line.replace(k, v)
     return str(line)
     
     
@@ -27,6 +25,7 @@ for l in all_converted:
         if elem.isnumeric():
             per_line.append(elem)
     all_saves.append(int(per_line[0] + per_line[-1]))
+
 
 print(sum(all_saves))
 
